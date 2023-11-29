@@ -155,7 +155,6 @@ int main()
 		system("pause");
 		system("cls");
 	}
-	
 	system("pause");
 	system("cls");
 

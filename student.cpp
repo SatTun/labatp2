@@ -1,10 +1,8 @@
 #include "Student.h"
-
 Student::Student() 
 {
 	cout << "Конструктор без параметров" << endl;
 }
-
 Student::Student(Student& obj) 
 {
 	cout << "Конструктор копирования" << endl;
@@ -48,11 +46,13 @@ void Student::setGroup(int buf)
 	group = buf;
 }
 
-int Student::getGroup() { 
+int Student::getGroup() 
+{ 
 	return group; 
 }
 
-void Student::setEducation(string strVal1, int intVal1, string strVal2, int intVal2, string strVal3, int intVal3) {
+void Student::setEducation(string strVal1, int intVal1, string strVal2, int intVal2, string strVal3, int intVal3) 
+{
 	if (strVal1 == "" || strVal2 == "" || strVal3 == "")
 		throw exception("Неверный предмет");
 	if (intVal1 < 2 || intVal1 > 5 || intVal2 < 2 || intVal2 > 5 || intVal3 < 2 || intVal3 > 5)
@@ -75,7 +75,8 @@ void Student::getEducation(string& strVal1, int& intVal1, string& strVal2, int& 
 	intVal3 = education[2].grade;
 }
 
-istream& operator>> (istream& in, Student& object) {
+istream& operator>> (istream& in, Student& object)
+{
 	string strVal1, strVal2, strVal3;
 	int intVal1, intVal2, intVal3;
 	cout << "Введите фамилию: ";
@@ -104,7 +105,8 @@ istream& operator>> (istream& in, Student& object) {
 	return in;
 }
 
-ostream& operator<< (ostream& out, Student& object) {
+ostream& operator<< (ostream& out, Student& object)
+{
 	string strVal1, strVal2, strVal3;
 	int intVal1, intVal2, intVal3;
 	out << "Студент: " << object.getStudName() << " " << object.getInitials() << endl;
